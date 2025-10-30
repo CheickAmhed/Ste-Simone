@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E07A5F">
+    <meta name="description" content="CAED Sainte Simone - Centre d'Accueil des Enfants en Détresse à Koudougou, Burkina Faso. Depuis 2007, nous offrons protection, éducation et espoir aux enfants orphelins.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CAED Sainte Simone | Centre d'Accueil des Enfants en Détresse">
+    <meta property="og:description" content="Depuis 2007, nous apportons secours aux enfants et orphelins à travers la santé, l'éducation et l'insertion sociale.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1200&q=80">
+    
+    <title>CAED Sainte Simone</title>
+    
+    <!-- Fonts - Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navigation" class="nav">
+        <div class="container-custom">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="#hero" class="logo">
+                    <div class="logo-icon">
+                        <img src="imgs/logo.jpeg" alt="logo" class="icon-heart" style="width: 70px; height: 70px;">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">CAED</span>
+                        <span class="logo-title">Sainte Simone</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links desktop-nav">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="mission.html" class="nav-link">Mission</a>
+                    <a href="programme.html" class="nav-link">Programmes</a>
+                    <a href="impact.html" class="nav-link">Impact</a>
+                    <a href="galerie.html" class="nav-link">Galerie</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- CTA Button - Desktop -->
+                <div class="desktop-nav">
+                    <a href="#soutien" class="btn btn-primary btn-hover">
+                        <i data-lucide="heart" class="btn-icon"></i>
+                        Faire un Don
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <i data-lucide="menu" id="menuIcon"></i>
+                    <i data-lucide="x" id="closeIcon" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="nav-link mobile">Accueil</a>
+                <a href="mission.html" class="nav-link mobile">Mission</a>
+                <a href="programme.html" class="nav-link mobile">Programmes</a>
+                <a href="impact.html" class="nav-link mobile">Impact</a>
+                <a href="galerie.html" class="nav-link mobile">Galerie</a>
+                <a href="contact.html" class="nav-link mobile">Contact</a>
+                <a href="soutien.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                    <i data-lucide="heart" class="btn-icon"></i>
+                    Faire un Don
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="hero-image"></div>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container-custom hero-content">
+            <div class="hero-text">
+                <!-- Badge -->
+                <div class="hero-badge fade-in-up">
+                    <i data-lucide="heart" class="badge-icon"></i>
+                    Depuis 2007
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="hero-title fade-in-up" style="animation-delay: 0.1s;">
+                    Centre d'Accueil des Enfants en Détresse
+                    <span class="hero-subtitle">Sainte Simone</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="hero-description fade-in-up" style="animation-delay: 0.2s;">
+                    Depuis 2007, nous apportons secours aux enfants et orphelins à travers la promotion de la santé, du bien-être, une éducation préscolaire et une insertion sociale.
+                </p>
+
+                <!-- Location -->
+                <p class="hero-location fade-in-up" style="animation-delay: 0.3s;">
+                    📍 Koudougou, Burkina Faso
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-buttons fade-in-up" style="animation-delay: 0.4s;">
+                    <a href="#soutien" class="btn btn-white btn-hover btn-lg">
+                        <i data-lucide="heart" class="btn-icon"></i>
+                        Faire un Don
+                    </a>
+                    <a href="#mission" class="btn btn-outline btn-hover btn-lg">
+                        En Savoir Plus
+                        <i data-lucide="arrow-right" class="btn-icon-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stats-bar-bg">
+                <div class="container-custom stats-content">
+                    <div class="stat-item" style="background-color: var(--accent);">
+                        <div class="stat-value">50</div>
+                        <div class="stat-label">Enfants Accueillis</div>
+                    </div>
+                    <div class="stat-item" style="background-color: var(--muted);">
+                        <div class="stat-value">25</div>
+                        <div class="stat-label">Enfants Scolarisés</div>
+                    </div>
+                    <div class="stat-item" style="background-color: var(--secondary);">
+                        <div class="stat-value">58</div>
+                        <div class="stat-label">Familles d'Accueil</div>
+                    </div>
+                    <div class="stat-item" style="background-color: var(--primary);">
+                        <div class="stat-value">17+</div>
+                        <div class="stat-label">Années d'Expérience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Actuality Section -->
+    <section id="actualite" class="actualite-section">
+        <h2 class="section-title">Actualités</h2>
+        <div class="container-custom actualite-container">
+            
+            <div class="actualite-card">
+            <img src="imgs/img3.jpeg" alt="Visite officielle" class="actualite-image">
+            <div class="actualite-content">
+                <h3 class="actualite-title">Visite officielle à Sainte Simone</h3>
+                <p class="actualite-date">Publié le 20 octobre 2025</p>
+                <p class="actualite-text">
+                Le directeur régional a visité notre établissement pour encourager les élèves et féliciter l’équipe pédagogique.
+                </p>
+                <a href="#" class="btn-voir-plus">Lire plus</a>
+            </div>
+            </div>
+
+            <div class="actualite-card">
+            <img src="imgs/education.jpeg" alt="Concours de sciences" class="actualite-image">
+            <div class="actualite-content">
+                <h3 class="actualite-title">Rentrée scolaire 2025 - 2026</h3>
+                <p class="actualite-date">Publié le 02 octobre 2025</p>
+                <p class="actualite-text">
+                Les élèves de Sainte Simone ont débuté leur rentrée des classes aujourd'hui.
+                </p>
+                <a href="#" class="btn-voir-plus">Lire plus</a>
+            </div>
+            </div>
+
+            <div class="actualite-card">
+            <img src="imgs/img5.jpeg" alt="Journée portes ouvertes" class="actualite-image">
+            <div class="actualite-content">
+                <h3 class="actualite-title">Journée Portes Ouvertes 2025</h3>
+                <p class="actualite-date">Publié le 3 octobre 2025</p>
+                <p class="actualite-text">
+                Parents et futurs élèves ont découvert nos infrastructures et programmes innovants.
+                </p>
+                <a href="#" class="btn-voir-plus">Lire plus</a>
+            </div>
+            </div>
+
+
+            <div class="actualite-card">
+            <img src="imgs/img3.jpeg" alt="Visite officielle" class="actualite-image">
+            <div class="actualite-content">
+                <h3 class="actualite-title">Visite officielle à Sainte Simone</h3>
+                <p class="actualite-date">Publié le 20 octobre 2025</p>
+                <p class="actualite-text">
+                Le directeur régional a visité notre établissement pour encourager les élèves et féliciter l’équipe pédagogique.
+                </p>
+                <a href="#" class="btn-voir-plus">Lire plus</a>
+            </div>
+            </div>
+
+            <div class="actualite-card">
+            <img src="imgs/education.jpeg" alt="Concours de sciences" class="actualite-image">
+            <div class="actualite-content">
+                <h3 class="actualite-title">Rentrée scolaire 2025 - 2026</h3>
+                <p class="actualite-date">Publié le 02 octobre 2025</p>
+                <p class="actualite-text">
+                Les élèves de Sainte Simone ont débuté leur rentrée des classes aujourd'hui.
+                </p>
+                <a href="#" class="btn-voir-plus">Lire plus</a>
+            </div>
+            </div>
+
+            <div class="actualite-card">
+            <img src="imgs/img5.jpeg" alt="Journée portes ouvertes" class="actualite-image">
+            <div class="actualite-content">
+                <h3 class="actualite-title">Journée Portes Ouvertes 2025</h3>
+                <p class="actualite-date">Publié le 3 octobre 2025</p>
+                <p class="actualite-text">
+                Parents et futurs élèves ont découvert nos infrastructures et programmes innovants.
+                </p>
+                <a href="#" class="btn-voir-plus">Lire plus</a>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programmes" class="section-padding">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Nos Programmes</h2>
+                <p class="section-description">
+                    Des programmes complets et adaptés pour accompagner chaque enfant vers un avenir meilleur.
+                </p>
+            </div>
+
+            <!-- Programs Grid -->
+            <div class="programs-grid">
+                <!-- Program 1 -->
+                <div class="program-card card card-hover">
+                    <div class="program-image" style="background-image: url('imgs/care.jpeg');">
+                        <div class="program-overlay"></div>
+                        <div class="program-badge badge-primary">Programme Principal</div>
+                        <div class="program-icon bg-primary">
+                            <i data-lucide="baby" class="icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="program-title">Protection de l'Enfance</h3>
+                        <p class="program-description">
+                            Accueil et protection des enfants en détresse âgés de 0 à 5 ans avec un environnement sécurisé.
+                        </p>
+                        <ul class="program-features">
+                            <li><span class="checkmark">✓</span> Accueil de 50 enfants résidents</li>
+                            <li><span class="checkmark">✓</span> Alimentation de qualité et adaptée</li>
+                            <li><span class="checkmark">✓</span> Soins sanitaires réguliers</li>
+                            <li><span class="checkmark">✓</span> Soutien psychosocial quotidien</li>
+                            <li><span class="checkmark">✓</span> Préparation à l'adoption et réunification familiale</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="program-card card card-hover">
+                    <div class="program-image" style="background-image: url('imgs/education.jpeg');">
+                        <div class="program-overlay"></div>
+                        <div class="program-badge badge-secondary">Scolarisation</div>
+                        <div class="program-icon bg-secondary">
+                            <i data-lucide="school" class="icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="program-title">Éducation</h3>
+                        <p class="program-description">
+                            Programme éducatif complet de la maternelle au primaire pour préparer l'avenir des enfants.
+                        </p>
+                        <ul class="program-features">
+                            <li><span class="checkmark">✓</span> 22 enfants en maternelle</li>
+                            <li><span class="checkmark">✓</span> 3 enfants en école primaire</li>
+                            <li><span class="checkmark">✓</span> Supervision préscolaire quotidienne</li>
+                            <li><span class="checkmark">✓</span> Enseignants qualifiés</li>
+                            <li><span class="checkmark">✓</span> Activités culturelles et sportives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card card card-hover">
+                    <div class="program-image" style="background-image: url('imgs/family.jpeg');">
+                        <div class="program-overlay"></div>
+                        <div class="program-badge badge-accent">58 Familles</div>
+                        <div class="program-icon bg-accent">
+                            <i data-lucide="heart-handshake" class="icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="program-title">Familles d'Accueil</h3>
+                        <p class="program-description">
+                            Placement et suivi des enfants dans des familles d'accueil pour une intégration sociale durable.
+                        </p>
+                        <ul class="program-features">
+                            <li><span class="checkmark">✓</span> 58 enfants en familles d'accueil</li>
+                            <li><span class="checkmark">✓</span> Suivi régulier par nos équipes</li>
+                            <li><span class="checkmark">✓</span> Accompagnement des familles</li>
+                            <li><span class="checkmark">✓</span> Soutien psychosocial continu</li>
+                            <li><span class="checkmark">✓</span> Processus d'adoption facilité</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="program-card card card-hover">
+                    <div class="program-image" style="background-image: url('imgs/jardin.jpeg');">
+                        <div class="program-overlay"></div>
+                        <div class="program-badge badge-primary">Développement</div>
+                        <div class="program-icon bg-primary">
+                            <i data-lucide="sprout" class="icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="program-title">Autosuffisance</h3>
+                        <p class="program-description">
+                            Projets d'autonomie alimentaire et économique pour assurer la pérennité de nos actions.
+                        </p>
+                        <ul class="program-features">
+                            <li><span class="checkmark">✓</span> Jardin potager productif</li>
+                            <li><span class="checkmark">✓</span> Culture de légumes bio</li>
+                            <li><span class="checkmark">✓</span> Formation du personnel</li>
+                            <li><span class="checkmark">✓</span> Réduction des coûts alimentaires</li>
+                            <li><span class="checkmark">✓</span> Modèle durable et écologique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="section-padding">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Galerie Photos</h2>
+                <p class="section-description">
+                    Découvrez la vie quotidienne au CAED Sainte Simone à travers ces moments de joie et d'apprentissage.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be generated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close" id="lightboxClose">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="lightbox-content">
+                <img id="lightboxImage" src="" alt="">
+                <div class="lightbox-info">
+                    <div class="lightbox-category" id="lightboxCategory"></div>
+                    <div class="lightbox-title" id="lightboxTitle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="soutien" class="section-padding bg-gradient">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Soutenez Notre Mission</h2>
+                <p class="section-description">
+                    Votre générosité peut changer la vie d'un enfant. Chaque contribution, quelle que soit sa taille, 
+                    fait une différence réelle dans la vie de nos enfants.
+                </p>
+            </div>
+
+            <!-- Support Options -->
+            <div class="support-options-grid">
+                <div class="support-option card card-hover">
+                    <div class="card-content text-center">
+                        <div class="support-icon bg-primary">
+                            <i data-lucide="heart" class="icon"></i>
+                        </div>
+                        <h3 class="support-title">Don Ponctuel</h3>
+                        <p class="support-desc">Faites un don unique pour soutenir nos actions en faveur des enfants.</p>
+                    </div>
+                </div>
+
+                <div class="support-option card card-hover">
+                    <div class="card-content text-center">
+                        <div class="support-icon bg-secondary">
+                            <i data-lucide="gift" class="icon"></i>
+                        </div>
+                        <h3 class="support-title">Don Mensuel</h3>
+                        <p class="support-desc">Un engagement régulier qui nous aide à planifier nos programmes sur le long terme.</p>
+                    </div>
+                </div>
+
+                <div class="support-option card card-hover">
+                    <div class="card-content text-center">
+                        <div class="support-icon bg-accent">
+                            <i data-lucide="hand-heart" class="icon"></i>
+                        </div>
+                        <h3 class="support-title">Parrainage</h3>
+                        <p class="support-desc">Parrainez un enfant et suivez son évolution tout au long de son parcours.</p>
+                    </div>
+                </div>
+
+                <div class="support-option card card-hover">
+                    <div class="card-content text-center">
+                        <div class="support-icon bg-primary">
+                            <i data-lucide="users" class="icon"></i>
+                        </div>
+                        <h3 class="support-title">Bénévolat</h3>
+                        <p class="support-desc">Donnez de votre temps et de vos compétences pour accompagner nos enfants.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="support-contact">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Comment Nous Aider</h3>
+                        <p class="card-subtitle">Contactez-nous pour plus d'informations sur les modalités de don</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-info">
+                                    <div class="contact-label">Téléphone Bureau</div>
+                                    <div class="contact-value">00226 78-44-66-36</div>
+                                </div>
+                                <button class="copy-btn" data-copy="00226 78-44-66-36">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-info">
+                                    <div class="contact-label">Téléphone Mobile</div>
+                                    <div class="contact-value">00226 74-44-36-72</div>
+                                </div>
+                                <button class="copy-btn" data-copy="00226 74-44-36-72">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-info">
+                                    <div class="contact-label">Email</div>
+                                    <div class="contact-value">yam_laur@yahoo.fr</div>
+                                </div>
+                                <button class="copy-btn" data-copy="yam_laur@yahoo.fr">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="impact-message">
+                            <p class="impact-emoji">💝 Chaque don compte!</p>
+                            <p class="impact-text">
+                                Votre soutien nous permet d'offrir une alimentation de qualité, des soins médicaux, 
+                                une éducation et un environnement aimant à 50 enfants chaque jour.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partners -->
+            <div class="partners">
+                <h3 class="partners-title">Nos Partenaires</h3>
+                <div class="partners-list">
+                    <div class="partner-badge">Burkina Nooma</div>
+                    <div class="partner-badge">Katharina Kersting</div>
+                    <div class="partner-badge">Ministère de l'Action Sociale</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-custom">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- About Column -->
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="imgs/logo.jpeg" alt="logo" class="footer-logo-icon" style="width: 70px; height: 70px;">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">CAED Sainte Simone</span>
+                            <span class="footer-logo-subtitle">Koudougou, Burkina Faso</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Depuis 2007, le Centre d'Accueil des Enfants en Détresse Sainte Simone œuvre pour offrir 
+                        un avenir meilleur aux enfants orphelins et abandonnés à travers la santé, l'éducation 
+                        et l'insertion sociale.
+                    </p>
+                    <div class="footer-contacts">
+                        <div class="footer-contact">
+                            <i data-lucide="map-pin" class="footer-contact-icon"></i>
+                            <span>Secteur n° 4, Route Nationale n° 14, Koudougou</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i data-lucide="phone" class="footer-contact-icon"></i>
+                            <span>00226 78-44-66-36 / 00226 74-44-36-72</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i data-lucide="mail" class="footer-contact-icon"></i>
+                            <span>yam_laur@yahoo.fr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-col">
+                    <h3 class="footer-links-title">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="mission.html">Mission</a></li>
+                        <li><a href="programme.html">Programmes</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="impact.galerie.html">Galerie</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Links -->
+                <div class="footer-links-col">
+                    <h3 class="footer-links-title">Soutenir</h3>
+                    <ul class="footer-links">
+                        <li><a href="#soutien">Faire un Don</a></li>
+                        <li><a href="#soutien">Devenir Parrain</a></li>
+                        <li><a href="#soutien">Bénévolat</a></li>
+                        <li><a href="#contact">Partenariats</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="footer-cta">
+                <div class="footer-cta-content">
+                    <h3 class="footer-cta-title">Aidez-nous à Changer des Vies</h3>
+                    <p class="footer-cta-text">
+                        Chaque contribution fait une différence. Rejoignez-nous dans notre mission 
+                        d'offrir un avenir meilleur aux enfants en détresse.
+                    </p>
+                    <a href="#soutien" class="btn btn-primary btn-hover btn-lg">
+                        <i data-lucide="heart" class="btn-icon"></i>
+                        Faire un Don
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © <span id="currentYear"></span> CAED Sainte Simone de Koudougou. Tous droits réservés.
+                </div>
+                <div class="footer-social">
+                    <span class="footer-social-text">Suivez-nous:</span>
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                    <a href="mailto:yam_laur@yahoo.fr" class="footer-social-link" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Motto -->
+            <div class="footer-motto">
+                <p>La Patrie ou la Mort, Nous Vaincrons</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i data-lucide="check-circle" class="toast-icon"></i>
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
