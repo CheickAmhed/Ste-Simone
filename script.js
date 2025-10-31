@@ -70,81 +70,180 @@ function initNavigation() {
 function initGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxContent = document.getElementById('lightboxContent');
     const lightboxCategory = document.getElementById('lightboxCategory');
     const lightboxTitle = document.getElementById('lightboxTitle');
     const lightboxClose = document.getElementById('lightboxClose');
     
-    const images = [
+    const items = [
+        {
+            url: 'imgs/joy.mp4',
+            title: 'Journée au Centre',
+            category: 'Vidéo',
+            type: 'video'
+        },
         {
             url: 'imgs/education.jpeg',
             title: 'Éducation et Apprentissage',
             category: 'Éducation',
+            type: 'image'
         },
         {
             url: 'imgs/img1.jpeg',
             title: 'Activités en Groupe',
             category: 'Vie Quotidienne',
+            type: 'image'
         },
         {
             url: 'imgs/img4.jpeg',
             title: 'Prise de Repas',
             category: 'Vie Quotidienne',
-        },
-        {
-            url: 'imgs/img2.jpeg',
-            title: 'Moments de Joie',
-            category: 'Vie Quotidienne',
+            type: 'image'
         },
         {
             url: 'imgs/jardin.jpeg',
             title: 'Activités Créatives',
             category: 'Activités',
+            type: 'image'
         },
         {
             url: 'imgs/care2.jpeg',
             title: 'Soins et Attention',
             category: 'Vie Quotidienne',
+            type: 'image'
         },
     ];
     
     // Generate gallery items
     if (galleryGrid) {
-        images.forEach((image, index) => {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            item.innerHTML = `
-                <img src="${image.url}" alt="${image.title}" loading="lazy">
-                <div class="gallery-overlay"></div>
-                <div class="gallery-info">
-                    <div class="gallery-category">${image.category}</div>
-                    <div class="gallery-title">${image.title}</div>
-                </div>
-            `;
+        items.forEach((item, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item card card-hover';
             
-            item.addEventListener('click', function() {
-                openLightbox(image);
+            if (item.type === 'video') {
+                // For video items - use poster frame from video or custom thumbnail
+                galleryItem.innerHTML = `
+                    <div class="gallery-video-wrapper">
+                        <video class="gallery-image" muted loop playsinline preload="metadata">
+                            <source src="${item.url}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-play-icon">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-info">
+                        <div class="gallery-category">${item.category}</div>
+                        <div class="gallery-title">${item.title}</div>
+                    </div>
+                `;
+                
+                // Add hover preview for video
+                const video = galleryItem.querySelector('video');
+                if (video) {
+                    galleryItem.addEventListener('mouseenter', function() {
+                        video.play().catch(e => {
+                            console.log('Video hover play prevented:', e.message);
+                        });
+                    });
+                    galleryItem.addEventListener('mouseleave', function() {
+                        video.pause();
+                        video.currentTime = 0;
+                    });
+                }
+            } else {
+                // For image items
+                galleryItem.innerHTML = `
+                    <img src="${item.url}" alt="${item.title}" class="gallery-image" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-info">
+                        <div class="gallery-category">${item.category}</div>
+                        <div class="gallery-title">${item.title}</div>
+                    </div>
+                `;
+            }
+            
+            galleryItem.addEventListener('click', function() {
+                openLightbox(item);
             });
             
-            galleryGrid.appendChild(item);
+            galleryGrid.appendChild(galleryItem);
         });
         
         // Reinitialize Lucide icons for dynamically added content
-        lucide.createIcons();
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
     }
     
     // Open lightbox
-    function openLightbox(image) {
-        lightboxImage.src = image.url;
-        lightboxImage.alt = image.title;
-        lightboxCategory.textContent = image.category;
-        lightboxTitle.textContent = image.title;
+    function openLightbox(item) {
+        // Clear previous media content
+        const existingMedia = lightboxContent.querySelector('.lightbox-media');
+        if (existingMedia) {
+            const video = existingMedia.querySelector('video');
+            if (video) {
+                video.pause();
+                video.src = ''; // Clear source to stop loading
+            }
+            existingMedia.remove();
+        }
+        
+        // Create media container
+        const mediaContainer = document.createElement('div');
+        mediaContainer.className = 'lightbox-media';
+        
+        // Create media element
+        if (item.type === 'video') {
+            mediaContainer.innerHTML = `
+                <video controls autoplay preload="auto" style="width: 100%; max-height: 80vh; border-radius: var(--radius-lg);">
+                    <source src="${item.url}" type="video/mp4">
+                    <source src="${item.url}" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+        } else {
+            mediaContainer.innerHTML = `
+                <img src="${item.url}" alt="${item.title}" style="width: 100%; height: auto; border-radius: var(--radius-lg);">
+            `;
+        }
+        
+        // Insert media before lightbox-info
+        const lightboxInfo = lightboxContent.querySelector('.lightbox-info');
+        lightboxContent.insertBefore(mediaContainer, lightboxInfo);
+        
+        // Update info
+        lightboxCategory.textContent = item.category;
+        lightboxTitle.textContent = item.title;
+        
+        // Show lightbox
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Force video to play after a short delay (helps with autoplay issues)
+        if (item.type === 'video') {
+            setTimeout(() => {
+                const video = mediaContainer.querySelector('video');
+                if (video) {
+                    video.play().catch(e => {
+                        console.log('Autoplay prevented, user interaction required:', e.message);
+                    });
+                }
+            }, 100);
+        }
     }
     
     // Close lightbox
     function closeLightbox() {
+        // Stop and cleanup video
+        const video = lightboxContent.querySelector('video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+            video.src = ''; // Important: clear source to stop loading
+        }
+        
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
     }
